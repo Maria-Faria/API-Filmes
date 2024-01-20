@@ -1,14 +1,13 @@
 package com.moviesapi;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.http.*;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Main {
@@ -41,65 +40,10 @@ public class Main {
 
         List<Movie> movies = conversor.readValue(json, new TypeReference<List<Movie>>() {}); //lista de filmes, com base no json
 
-        //separando os atributos
-        List<String> titles = parseTitles(movies);         
-        List<String> urlImages = parseUrlImage(movies);
-        List<String> years = parseYear(movies);
-        List<String> rating = parseRating(movies);
+        PrintWriter out = new PrintWriter("index.html");
+        HTMLGenerator page = new HTMLGenerator(out);
 
-        System.out.println("---- TITLES ----");
-        titles.forEach(System.out::println);
-
-        System.out.println("\n---- URL IMAGES ----");
-        urlImages.forEach(System.out::println);
-
-        System.out.println("\n---- YEARS ----");
-        for(String year : years) {
-            System.out.println(year);
-        }
-
-        System.out.println("\n---- RATING ----");
-        rating.forEach(System.out::println);
-
-    }
-
-    public static List<String> parseTitles(List<Movie> movies) {
-        List<String> movieTitles = new ArrayList<>();
-
-        for(int i = 0; i < movies.size(); i++) {
-            movieTitles.add(movies.get(i).getTitle());
-        }
-
-        return movieTitles;
-    }
-
-    public static List<String> parseRating(List<Movie> movies) {
-        List<String> movieRating = new ArrayList<>();
-
-        for(int i = 0; i < movies.size(); i++) {
-            movieRating.add(movies.get(i).getImDbRating());
-        }
-
-        return movieRating;
-    }
-
-    public static List<String> parseYear(List<Movie> movies) {
-        List<String> movieYear = new ArrayList<>();
-
-        for(int i = 0; i < movies.size(); i++) {
-            movieYear.add(movies.get(i).getYear());
-        }
-
-        return movieYear;
-    }
-
-    public static List<String> parseUrlImage(List<Movie> movies) {
-        List<String> movieImages = new ArrayList<>();
-
-        for(int i = 0; i < movies.size(); i++) {
-            movieImages.add(movies.get(i).getImage());
-        }
-
-        return movieImages;
+        page.generate(movies);
+        out.close();
     }
 }
