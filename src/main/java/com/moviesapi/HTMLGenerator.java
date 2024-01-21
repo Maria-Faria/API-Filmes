@@ -24,14 +24,14 @@ public class HTMLGenerator {
 
             <body style="background: #87CEEB;">
                 <h1 style="font-family: fantasy; text-align: center; margin-top: 10px; justify-content: space-around;">Top Movies</h1> 
-                <div class="card-deck" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin-top: 25px; margin-left: 2%">            
+                <div class="card-deck" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; margin-top: 25px; margin-left: 2%; align-items: center;">            
         """;
 
         String body = """
-                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <h4 class="card-header">%s</h4>
+                    <div class="card text-white bg-dark mb-3" style="width: 18rem;align-items: center;">
+                        <h4 class="card-header" style="height: 90px;">%s</h4>
                         <div class="card-body">
-                            <img class="card-img" src="%s" alt="%s">
+                            <img class="card-img" src="%s" alt="%s" style="height: 350px">
                             <p class="card-text mt-2">Nota: %s - Ano: %s</p>
                         </div>
                     </div>
