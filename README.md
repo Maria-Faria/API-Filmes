@@ -17,6 +17,12 @@ Esse projeto faz parte do #7DaysOfCode da plataforma de cursos Alura, com o obje
 
   ![image](https://github.com/Maria-Faria/API-Filmes/assets/114308727/4decbe4d-1e3b-45c1-b845-4d61de0e0277)
 
+- `Gerar uma página HTML`: por meio de um objeto da classe _PrintWriter_, o código Java cria um arquivo HTML e escreve no mesmo, utilizando os atributos da classe _Movie_ para inserir as informações de cada filme;
+
+  ![image](https://github.com/Maria-Faria/API-Filmes/assets/114308727/3fbbd0b5-fa64-426c-a40a-34ce7c5c8ffc) 
+
+  ![image](https://github.com/Maria-Faria/API-Filmes/assets/114308727/49513ab2-ba8d-4dfd-997a-982206f6f224)
+
 # 📖 Aprendizados
 - Realização de requisições HTTP
 - Utilização da bilbioteca Jackson para manipulação de arquivos JSON
