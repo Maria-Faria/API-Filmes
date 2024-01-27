@@ -26,8 +26,9 @@ Esse projeto faz parte do #7DaysOfCode da plataforma de cursos Alura, com o obje
 # 📖 Aprendizados
 - Realização de requisições HTTP
 - Utilização da bilbioteca Jackson para manipulação de arquivos JSON
+- Tornar o código principal mais limpo
 
 # 🖥️ Onde acessar o projeto
 <a href="https://maria-faria.github.io/API-Filmes/">CLique aqui para visualizar o projeto</a>
 
-![image](https://github.com/Maria-Faria/API-Filmes/assets/114308727/c2173e65-a75e-4d41-9d1c-9cc8abfbd790)
+![image](https://github.com/Maria-Faria/API-Filmes/assets/114308727/8619cb16-6fa5-4cfb-adf5-5d11ea40f3dc)
