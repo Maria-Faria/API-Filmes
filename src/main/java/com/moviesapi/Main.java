@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 public class Main {
 
     public static void main(String[] args) throws IOException, URISyntaxException, InterruptedException{
         //Consumindo a API
+        String apiKey = JOptionPane.showInputDialog("Digite a chave da API");
+        
         String json = new ImdbApiClient().getBody("https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json");
 
         //Parseando o JSON

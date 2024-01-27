@@ -40,7 +40,7 @@ public class HTMLGenerator {
         out.print(head);
 
         for(int i = 0; i < movies.size(); i++) {
-            out.print(String.format(body, movies.get(i).getTitle(), movies.get(i).getImage(), "image", movies.get(i).getImDbRating(), movies.get(i).getYear()));
+            out.print(String.format(body, movies.get(i).title(), movies.get(i).urlImage(), "image", movies.get(i).rating(), movies.get(i).year()));
         }
 
         out.print("""
